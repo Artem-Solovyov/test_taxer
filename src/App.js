@@ -13,7 +13,7 @@ function App() {
   const certUsers = []
 
   const getInfoUsers = () => {
-    if (localStorage.length != 0) {
+    if (localStorage.length !== 0) {
       Object.keys(localStorage).forEach(key => {
         let certData = localStorage.getItem(key)
         let t = certData.substring(certData.indexOf('base64,') + 7)
