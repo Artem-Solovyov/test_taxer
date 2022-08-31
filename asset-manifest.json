@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/test_taxer/static/css/main.c48dca5d.css",
+    "main.js": "/test_taxer/static/js/main.80083e48.js",
+    "static/js/787.39b20e14.chunk.js": "/test_taxer/static/js/787.39b20e14.chunk.js",
+    "index.html": "/test_taxer/index.html",
+    "main.c48dca5d.css.map": "/test_taxer/static/css/main.c48dca5d.css.map",
+    "main.80083e48.js.map": "/test_taxer/static/js/main.80083e48.js.map",
+    "787.39b20e14.chunk.js.map": "/test_taxer/static/js/787.39b20e14.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c48dca5d.css",
+    "static/js/main.80083e48.js"
+  ]
+}
