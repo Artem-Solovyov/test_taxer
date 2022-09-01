@@ -1,6 +1,7 @@
 import './App.css';
 import {useState} from "react";
 import ASN1 from '@lapo/asn1js';
+import React from "react";
 
 const Base64 = require('@lapo/asn1js/base64')
 
@@ -9,7 +10,7 @@ function App() {
   const [drag, setDrag] = useState(false)
   const [render, setRender] = useState(false)
   const [index, setIndex] = useState(0)
-  const [isActive, setIsActive] = useState(0)
+  const [isActive, setIsActive] = useState(false)
   const certUsers = []
 
   const getInfoUsers = () => {
