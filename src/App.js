@@ -11,6 +11,7 @@ function App() {
   const [render, setRender] = useState(false)
   const [index, setIndex] = useState(0)
   const [isActive, setIsActive] = useState(false)
+  const [newFiles, setNewFiles] = useState([])
   const certUsers = []
 
   const getInfoUsers = () => {
@@ -39,7 +40,9 @@ function App() {
   }
   const onDropHandler = (e) => {
     e.preventDefault()
+    setDrag(false)
     let files = [...e.dataTransfer.files]
+    setNewFiles([...files])
     files.forEach(file => {
       let reader = new FileReader();
       reader.readAsDataURL(file);
@@ -47,9 +50,9 @@ function App() {
         console.log(reader.error);
       };
       reader.onload = function () {
+
         localStorage.setItem(file.name, reader.result)
       }
-      setDrag(false)
     })
   }
   const newIndexCert = (newIndex) => {
@@ -73,7 +76,21 @@ function App() {
                 })
                 : <div>Завантажте сертифікат</div>}
           </div>
-          <button onClick={() => {setRender(render ? false : true)}}>Оновити данні</button>
+          <button onClick={() => {
+            setRender(render ? false : true)
+            setNewFiles([])
+          }}>Завантажити
+          </button>
+          <div className={'loading'}>
+            <ul>
+            {newFiles[0]
+                ? newFiles.map(file => {
+                    return <li>{file.name}</li>
+                })
+                : null
+            }
+            </ul>
+          </div>
         </div>
         <div className={'info'}>
           {certUsers[0]
@@ -104,6 +121,7 @@ function App() {
           <div id={'result'}>
           </div>
         </div>
+
       </main>
   );
 }
